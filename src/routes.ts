@@ -16,4 +16,8 @@ export const routes = (app) => {
 			sum,
 		});
 	});
+
+	app.get('/log', (request, response) => {
+		response.sendFile(__dirname + '/index.html');
+	});
 };
