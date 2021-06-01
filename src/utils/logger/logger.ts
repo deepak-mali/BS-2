@@ -1,11 +1,12 @@
-import { createLogger, format, transports } from 'winston';
+import { createLogger, format, loggers, transports } from 'winston';
 import chalk from 'chalk';
 import moment from 'moment';
 
 // Create logger instance.
 export const logger = createLogger({
   transports: [
-    new transports.Console({})
+    new transports.Console({}),
+		new transports.File({ filename: 'combined.log' }),
   ],
 
   // format log messages.
